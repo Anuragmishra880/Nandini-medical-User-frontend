@@ -1,0 +1,54 @@
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-image: url("../../assets/HeroSetionImg.jpg");
+  background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+}
+
+/* Soft blob shapes */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 40% 60% 55% 45% / 40% 45% 55% 60%;
+  filter: blur(40px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Top-left mint blob */
+.hero::before {
+  top: -15vmax;
+  left: -10vmax;
+  background: radial-gradient(circle at 30% 30%, #22c55e, #16a34a);
+}
+
+/* Bottom-right blue blob */
+.hero::after {
+  bottom: -18vmax;
+  right: -12vmax;
+  background: radial-gradient(circle at 70% 70%, #3b82f6, #1e40af);
+}
+
+
+.Hero_content h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  color: #0f172a;
+  /* letter-spacing: 0.5px; */
+}
+
+.hero_content p {
+  margin: 0.5rem 0 1.5rem;
+  color: #334155;
+}
+
+

@@ -1,0 +1,24 @@
+.card {
+    width: 315px;
+    height: 300px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 12px;
+
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card-title {
+    font-weight: 600;
+
+}
+
+.card-text {
+    font-size: medium;
+    font-weight: 800;
+}

@@ -1,0 +1,14 @@
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://source.unsplash.com/1600x600/?medicine,healthcare") center/cover no-repeat;
+  height: 300px;
+}
+
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
