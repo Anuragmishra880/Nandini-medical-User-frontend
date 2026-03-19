@@ -1,12 +1,61 @@
-# React + Vite
+# E-Commerce Website (User Panel)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional e-commerce user interface where customers can browse products, add items to cart, and place orders seamlessly.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Product Listing
+- Add to Cart
+- Checkout Page
+- Authentication (Login/Register)
+- Responsive Design
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Redux Toolkit
+- Bootstrap
+- Node.js
+- Express.js
+- MongoDB
+
+## 🌐 Live Demo
+
+Coming soon...
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home Page](./screenshots/Home-Page.png)
+
+### Shop Page
+
+![Shop Page](./screenshots/Shop-page.png)
+
+### Cart Page
+
+![Cart Page](./screenshots/Cart-page.png)
+
+### About Page
+
+![About Page](./screenshots/About-page.png)
+
+### Contact Page
+
+![Contact Page](./screenshots/Contact-page.png)
+
+### Register Page
+
+![Register Page](./screenshots/Register-page.png)
+
+### Login Page
+
+![Login Page](./screenshots/Login-page.png)
+
+## 📦 Installation
+
+```bash
+npm install
+npm run dev
+```

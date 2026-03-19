@@ -1,59 +1,89 @@
-.Footer {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-    margin-top: auto;
-    position: sticky;
-    bottom: 0;
+.footer {
+  background: rgba(41, 55, 88, 0.8); /* same as navbar */
+  border-top: 1px solid #e5e7eb;
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  color: #e2e8f0; /* light text for contrast */
 }
 
-/* Logo Section */
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
 .footerLogo img {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
+  width: 160px;
+  height: auto;
+  filter: brightness(0) invert(1); /* white logo effect */
+  margin-bottom: 10px;
 }
 
 .footerLogo p {
-    text-align: left;
-    color: #555;
-    font-size: 14px;
-    margin-top: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #cbd5f5;
 }
 
-/* Quick Links Section */
+.quickLinks h3,
+.footerContact h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #f1f5f9;
+}
+
 .quickLinks ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quickLinks ul li {
+  margin-bottom: 8px;
 }
 
 .quickLinks ul li a {
-    text-align: left;
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 15px;
+  transition: color 0.3s ease;
 }
 
 .quickLinks ul li a:hover {
-    color: brown;
+  color: #38bdf8; /* cyan hover */
 }
 
-/* Footer Bottom */
+.footerContact p {
+  font-size: 14px;
+  color: #cbd5f5;
+  margin: 4px 0;
+}
+
 .footerBottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 1rem;
-    padding-top: 15px;
-    font-size: 0.8rem;
-    color: #666;
-    border-top: 1px solid #ddd;
-    width: 100%;
+  }
+
+  .footerLogo img {
+    width: 130px;
+  }
+
+  .quickLinks ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
 }

@@ -38,7 +38,7 @@ const AddToCart = (productId, quantity = 1) => async (dispatch) => {
         body: JSON.stringify({ productId, quantity }),
       }
     );
-    console.log(productId)
+  
     dispatch(fetchCart());
   } catch (error) {
     dispatch(setError(error.message));

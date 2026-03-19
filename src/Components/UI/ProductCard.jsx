@@ -12,7 +12,7 @@ const ProductCard = ({ item }) => {
     if (!user) {
       alert("Please login first");
       navigate("/login");
-      console.log(user);
+      
       return;
     }
 
