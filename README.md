@@ -23,6 +23,13 @@ A fully functional e-commerce user interface where customers can browse products
 
 Coming soon...
 
+## 📦 Installation
+
+```bash
+npm install
+npm run dev
+```
+
 ## 📸 Screenshots
 
 ### Home Page
@@ -52,10 +59,3 @@ Coming soon...
 ### Login Page
 
 ![Login Page](./screenshots/Login-page.png)
-
-## 📦 Installation
-
-```bash
-npm install
-npm run dev
-```
