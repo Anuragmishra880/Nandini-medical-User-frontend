@@ -1,54 +1,110 @@
+/* HERO */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  overflow: hidden;
-  background-image: url("../../assets/HeroSetionImg.jpg");
   background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+  overflow: hidden;
 }
 
-/* Soft blob shapes */
 .hero::before,
 .hero::after {
   content: "";
   position: absolute;
   width: 55vmax;
   height: 55vmax;
-  border-radius: 40% 60% 55% 45% / 40% 45% 55% 60%;
+  border-radius: 40%;
   filter: blur(40px);
   opacity: 0.25;
-  pointer-events: none;
 }
 
-/* Top-left mint blob */
 .hero::before {
   top: -15vmax;
   left: -10vmax;
-  background: radial-gradient(circle at 30% 30%, #22c55e, #16a34a);
+  background: #22c55e;
 }
 
-/* Bottom-right blue blob */
 .hero::after {
   bottom: -18vmax;
   right: -12vmax;
-  background: radial-gradient(circle at 70% 70%, #3b82f6, #1e40af);
+  background: #3b82f6;
 }
-
 
 .Hero_content h2 {
-  font-weight: 600;
-  font-size: 3rem;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   color: #0f172a;
-  /* letter-spacing: 0.5px; */
 }
 
-.hero_content p {
-  margin: 0.5rem 0 1.5rem;
+.Hero_content p {
+  margin: 10px 0 20px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #334155;
 }
 
+/* 🔥 COMMON BUTTON */
+.custom-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
 
+.custom-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Hero button */
+.hero-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* SECTION HEADER */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 60vh;
+    padding: 1.5rem;
+  }
+
+  .Hero_content h2 {
+    font-size: 1.8rem;
+  }
+
+  .Hero_content p {
+    font-size: 0.9rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .section-header a {
+    align-self: flex-end;
+  }
+
+  .custom-btn {
+    padding: 7px 12px;
+    font-size: 0.85rem;
+  }
+
+  .hero-btn {
+    padding: 9px 16px;
+    font-size: 0.95rem;
+  }
+}
