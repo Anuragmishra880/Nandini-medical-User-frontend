@@ -30,7 +30,7 @@ const Navbar = ({ setSearchMedicine }) => {
     }
   };
   return (
-    <nav className="navbar navbar-expand-md custom-navbar shadow-sm sticky-top">
+    <nav className="navbar navbar-expand-md custom-navbar shadow-sm sticky-top" onClick={closeMenu}>
       <div className="container">
         {/* Logo */}
         <NavLink className="navbar-brand" to="/">
