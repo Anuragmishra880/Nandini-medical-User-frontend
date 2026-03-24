@@ -1,0 +1,49 @@
+/* Common shimmer effect */
+.shimmer {
+  background: linear-gradient(90deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+
+/* Mission/Vision placeholders */
+.shimmer-card-title {
+  height: 24px;
+  width: 50%;
+  margin: 0 auto;
+}
+.shimmer-card-text {
+  height: 16px;
+  width: 90%;
+  margin: 8px auto;
+}
+
+/* Section title */
+.shimmer-section-title {
+  height: 28px;
+  width: 40%;
+}
+
+/* Feature placeholders */
+.shimmer-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.shimmer-feature-title {
+  height: 18px;
+  width: 70%;
+  margin: 0 auto;
+}

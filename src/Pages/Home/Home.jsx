@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./Home.css";
+import ShimmerCard from "../../Components/UI/ShimmerCard"
 import { productAction } from "../../store/productAction";
 import { useEffect } from "react";
 import ProductCard from "../../Components/UI/ProductCard";
@@ -28,7 +29,21 @@ export default function Home({ searchMedicine }) {
       )
     : allProducts;
 
-  if (loading) return <p className="text-center mt-5">Loading...</p>;
+  
+
+if (loading) {
+  return (
+    <div className="container py-4">
+      <div className="row g-4">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <ShimmerCard />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
   if (error)
     return <p className="text-center text-danger mt-5">Error: {error}</p>;
 

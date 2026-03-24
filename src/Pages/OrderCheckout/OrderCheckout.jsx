@@ -1,18 +1,21 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import ShimmerOrderCheckout from "../../Components/UI/ShimmerOrderCheckOut";
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.productId.productPrice * item.quantity,
-    0
+    0,
   );
 
   const handleBuyNow = () => {
     alert("This is a demo checkout. Payment integration not implemented.");
   };
-
+  if (!cartItems || cartItems.length === 0) {
+    return <ShimmerOrderCheckout />;
+  }
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4">Order Summary</h2>

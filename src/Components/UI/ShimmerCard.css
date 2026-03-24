@@ -1,0 +1,88 @@
+/* Shimmer.css
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  height: 100%;
+}
+
+.shimmer-img {
+  height: 150px;
+  width: 100%;
+}
+
+.shimmer-title {
+  height: 20px;
+  width: 70%;
+}
+
+.shimmer-price {
+  height: 18px;
+  width: 40%;
+}
+
+.shimmer-btn {
+  height: 30px;
+  width: 60%;
+} */
+
+/* Shimmer.css */
+/* Shimmer.css */
+.shimmer {
+  background: linear-gradient(90deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Match ProductCard layout */
+.shimmer-img {
+  height: 140px; /* same as product image */
+  width: 100%;
+  border-radius: 6px;
+}
+
+.shimmer-title {
+  height: 18px;
+  width: 70%;
+}
+
+.shimmer-price {
+  height: 22px;
+  width: 40%;
+}
+
+.shimmer-btn {
+  height: 28px;
+  width: 60px; /* same size as ADD button */
+  border-radius: 4px;
+}

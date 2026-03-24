@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,6 +7,8 @@ import {
   clearCart,
 } from "../../store/cartAction";
 import { useNavigate, NavLink } from "react-router-dom";
+import ShimmerCart from "../../Components/UI/ShimmerCart";
+import { useEffect } from "react";
 export default function CartPage() {
   const { user, authLoading } = useSelector((state) => state.auth);
 
@@ -23,9 +24,9 @@ export default function CartPage() {
     }
 
     dispatch(fetchCart());
-  }, [user,authLoading, dispatch]);
+  }, [user, authLoading, dispatch]);
 
-  if (loading) return <p className="text-center mt-4">Loading cart...</p>;
+  if (loading) return <ShimmerCart />;
   if (error) return <p className="text-danger text-center">{error}</p>;
 
   const totalPrice = cartItems?.reduce(
@@ -142,7 +143,9 @@ export default function CartPage() {
                 >
                   Clear Cart
                 </button>
-                <NavLink className="btn btn-success" to='/order-checkout'>Checkout</NavLink>
+                <NavLink className="btn btn-success" to="/order-checkout">
+                  Checkout
+                </NavLink>
               </div>
             </div>
           </div>

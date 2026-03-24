@@ -1,0 +1,43 @@
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f6f7f8 25%,
+    #edeef1 50%,
+    #f6f7f8 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Checkout placeholders */
+.shimmer-title {
+  height: 22px;
+  width: 70%;
+}
+
+.shimmer-text {
+  height: 16px;
+  width: 60%;
+}
+
+.shimmer-price {
+  height: 20px;
+  width: 40%;
+}
+
+.shimmer-total {
+  height: 26px;
+  width: 120px;
+}
+
+.shimmer-btn-lg {
+  height: 40px;
+  width: 140px;
+  border-radius: 6px;
+}

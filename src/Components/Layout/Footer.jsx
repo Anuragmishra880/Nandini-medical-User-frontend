@@ -1,14 +1,16 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import './Footer.css'
-import logo from '../../assets/logo.svg'
-
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Footer.css";
+import logo from "../../assets/logo.svg";
+import ShimmerFooter from "../UI/ShimmerFooter";
+import { useSelector } from "react-redux";
 const Footer = () => {
+  const { loading } = useSelector((state) => state.product);
+  if (loading) return <ShimmerFooter />;
+
   return (
     <footer className="footer">
-      
       <div className="footerContainer">
-
         <div className="footerLogo">
           <img src={logo} alt="Nandini Medical Logo" />
           <p>Your Health, Our Priority</p>
@@ -17,9 +19,15 @@ const Footer = () => {
         <div className="quickLinks">
           <h3>Quick Links</h3>
           <ul>
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/about'>About</NavLink></li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
           </ul>
         </div>
 
@@ -28,14 +36,13 @@ const Footer = () => {
           <p>📞 +91 378427932</p>
           <p>📧 nandinimedical@gmail.com</p>
         </div>
-
       </div>
 
       <div className="footerBottom">
         <p>© 2025 Nandini Medical Hall. All rights reserved.</p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

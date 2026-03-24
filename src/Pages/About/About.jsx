@@ -1,6 +1,11 @@
+import ShimmerAbout from "../../Components/UI/ShimmerAbout";
 import "./About.css";
-
+import { useSelector } from "react-redux";
 export default function About() {
+  const { loading } = useSelector((state) => state.product);
+  if (loading) {
+    return <ShimmerAbout />;
+  }
   return (
     <div className="about-page">
       {/* Hero Section */}
@@ -19,9 +24,9 @@ export default function About() {
               <div className="card-body">
                 <h2 className="card-title text-danger">Our Mission</h2>
                 <p className="card-text">
-                  To deliver quality medicines and healthcare products with transparency,
-                  trust, and compassion. We aim to make healthcare accessible and affordable
-                  for everyone.
+                  To deliver quality medicines and healthcare products with
+                  transparency, trust, and compassion. We aim to make healthcare
+                  accessible and affordable for everyone.
                 </p>
               </div>
             </div>
@@ -32,8 +37,8 @@ export default function About() {
               <div className="card-body">
                 <h2 className="card-title text-primary">Our Vision</h2>
                 <p className="card-text">
-                  To be the most reliable medical store in the community, known for
-                  excellence, care, and innovation in healthcare services.
+                  To be the most reliable medical store in the community, known
+                  for excellence, care, and innovation in healthcare services.
                 </p>
               </div>
             </div>
