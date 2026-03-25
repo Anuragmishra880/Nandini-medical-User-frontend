@@ -1,4 +1,4 @@
-import React from "react";
+
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import logo from "../../assets/logo.svg";
@@ -9,7 +9,7 @@ const Footer = () => {
   if (loading) return <ShimmerFooter />;
 
   return (
-    <footer className="footer">
+    <footer className="footer ">
       <div className="footerContainer">
         <div className="footerLogo">
           <img src={logo} alt="Nandini Medical Logo" />

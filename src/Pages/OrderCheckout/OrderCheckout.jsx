@@ -1,10 +1,15 @@
-import React from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import ShimmerOrderCheckout from "../../Components/UI/ShimmerOrderCheckOut";
+import { fetchCart } from "../../store/cartAction";
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [dispatch]);
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.productId.productPrice * item.quantity,
     0,

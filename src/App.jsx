@@ -1,26 +1,33 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 import AppLayout from "./Components/Layout/AppLayout";
-import Home from "./Pages/Home/Home";
-import Shop from "./Pages/Shop/Shop";
-import Category from "./Pages/Category/Category";
-import Contact from "./Pages/Contact/Contact";
-import Cart from "./Pages/Cart/Cart";
-import ErrorPage from "./Pages/ErrorPage/ErrorPage";
-import ProductDetails from "./Pages/ProductDetails/ProductDetails";
-import About from "./Pages/About/About";
+
+const Home = lazy(() => import("./Pages/Home/Home"));
+const Shop = lazy(() => import("./Pages/Shop/Shop"));
+const Contact = lazy(() => import("./Pages/Contact/Contact"));
+const Category = lazy(() => import("./Pages/Category/Category"));
+const Cart = lazy(() => import("./Pages/Cart/Cart"));
+const ErrorPage = lazy(() => import("./Pages/ErrorPage/ErrorPage"));
+const ProductDetails = lazy(
+  () => import("./Pages/ProductDetails/ProductDetails"),
+);
+const About = lazy(() => import("./Pages/About/About"));
+const RegisterForm = lazy(
+  () => import("./Components/registerForm/RegisterForm"),
+);
+const LoginForm = lazy(() => import("./Components/LoginForm/LoginForm"));
+const Checkout = lazy(() => import("./Pages/OrderCheckout/OrderCheckout"));
 import { useDispatch } from "react-redux";
 import {
   setError,
   setFeaturedMedicines,
   setLoading,
 } from "./store/productSlice";
-import { useEffect, useState } from "react";
-import RegisterForm from "./Components/registerForm/RegisterForm";
-import LoginForm from "./Components/LoginForm/LoginForm";
+
 import { getCurrentUser } from "./store/authAction";
-import Checkout from "./Pages/OrderCheckout/OrderCheckout";
+import ShimmerCard from "./Components/UI/ShimmerCard";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +42,9 @@ function App() {
       dispatch(setLoading(true));
 
       try {
-        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/products/`);
+        const response = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/api/v1/products/`,
+        );
 
         // 👉 Server response check
         if (!response.ok) {
@@ -115,7 +124,9 @@ function App() {
 
   return (
     <div className="my-container">
-      <RouterProvider router={router} />
+      <Suspense fallback={<ShimmerCard />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
   );
 }

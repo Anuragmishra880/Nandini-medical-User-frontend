@@ -30,7 +30,10 @@ const Navbar = ({ setSearchMedicine }) => {
     }
   };
   return (
-    <nav className="navbar navbar-expand-md custom-navbar shadow-sm sticky-top" onClick={closeMenu}>
+    <nav
+      className="navbar navbar-expand-md custom-navbar shadow-sm sticky-top"
+      onClick={closeMenu}
+    >
       <div className="container">
         {/* Logo */}
         <NavLink className="navbar-brand" to="/">
@@ -52,7 +55,7 @@ const Navbar = ({ setSearchMedicine }) => {
           {/* Links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" onClick={closeMenu} end>
+              <NavLink end className="nav-link" to="/" onClick={closeMenu}>
                 Home
               </NavLink>
             </li>
@@ -61,7 +64,7 @@ const Navbar = ({ setSearchMedicine }) => {
                 Shop
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 className="nav-link"
                 to="/categories"
@@ -69,7 +72,7 @@ const Navbar = ({ setSearchMedicine }) => {
               >
                 Categories
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/contact" onClick={closeMenu}>
                 Contact
@@ -102,7 +105,7 @@ const Navbar = ({ setSearchMedicine }) => {
               <>
                 <li className="nav-item">
                   <button
-                    className="nav-link btn btn-link p-0"
+                    className="nav-link p-0"
                     onClick={() => {
                       dispatch(logout());
                       closeMenu();
@@ -111,7 +114,7 @@ const Navbar = ({ setSearchMedicine }) => {
                     Logout
                   </button>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item ">
                   <NavLink
                     className="nav-link"
                     to="/order-checkout"
@@ -140,7 +143,14 @@ const Navbar = ({ setSearchMedicine }) => {
             </div>
 
             {/* Cart */}
-            <button className="cart-btn" onClick={handleCartClick}>
+
+            <button
+              className="cart-btn nav-link"
+              onClick={() => {
+                closeMenu();
+                handleCartClick();
+              }}
+            >
               <Cart size={20} />
               <span>{totalQuantity}</span>
             </button>
