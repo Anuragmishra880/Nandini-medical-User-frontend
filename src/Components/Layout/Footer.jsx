@@ -2,11 +2,10 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import logo from "../../assets/logo.svg";
-import ShimmerFooter from "../UI/ShimmerFooter";
+
 import { useSelector } from "react-redux";
 const Footer = () => {
-  const { loading } = useSelector((state) => state.product);
-  if (loading) return <ShimmerFooter />;
+
 
   return (
     <footer className="footer ">
